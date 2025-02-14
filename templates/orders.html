@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Orders - AV Food Service{% endblock %}
+{% block content %}
+    <h2>Order Summary</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Food Item</th>
+            <th>Quantity</th>
+            <th>Price (₹)</th>
+            <th>Payment Mode</th>
+            <th>Status</th>
+        </tr>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.food_item }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>₹{{ order.price }}</td>
+            <td>{{ order.payment_mode }}</td>
+            <td>{{ order.order_status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/menu">Back to Menu</a>
+{% endblock %}

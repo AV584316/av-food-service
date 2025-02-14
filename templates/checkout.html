@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Checkout - AV Food Service{% endblock %}
+{% block content %}
+    <h2>Checkout</h2>
+    <p>Your total is ₹{{ total_price }}</p>
+    <form action="/checkout" method="post">
+        <label for="payment_mode">Payment Method:</label>
+        <select name="payment_mode">
+            <option value="UPI">Google Pay (UPI)</option>
+            <option value="COD">Cash on Delivery</option>
+        </select>
+        <button type="submit">Place Order</button>
+    </form>
+    <a href="/cart">Back to Cart</a>
+{% endblock %}

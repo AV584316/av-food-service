@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Menu - AV Food Service{% endblock %}
+{% block content %}
+    <h2>Our Menu</h2>
+    <form action="/add_to_cart" method="post">
+        <label for="food_item">Choose Food:</label>
+        <select name="food_item" required>
+            <option value="Aloo Paratha">Aloo Paratha - ₹50</option>
+            <option value="Paneer Paratha">Paneer Paratha - ₹80</option>
+            <option value="Mix Veg Sabji">Mix Veg Sabji - ₹120</option>
+            <option value="Dal Tadka">Dal Tadka - ₹100</option>
+            <option value="Tandoori Roti">Tandoori Roti - ₹20</option>
+        </select>
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" min="1" value="1" required>
+        <button type="submit">Add to Cart</button>
+    </form>
+    <a href="/cart">Go to Cart</a>
+{% endblock %}
